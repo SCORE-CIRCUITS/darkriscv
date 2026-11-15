@@ -82,12 +82,12 @@ endif
     export AR  = $(CCPATH)/$(CROSS)-ar
     export CPP = $(CCPATH)/$(CROSS)-cpp
 
-       CFLAGS  = -Wall -fcommon -ffreestanding $(OPT) -fno-delete-null-pointer-checks -m$(ENDIAN)-endian
+       CFLAGS  = -Wall -fcommon -ffreestanding $(OPT) -fno-delete-null-pointer-checks
        CFLAGS += -march=$(ARCH) -mabi=$(ABI) -I$(DARKLIBC)/include -I../$(DARKLIBC)/include
        CFLAGS += -D__RISCV__ -DBUILD="\"$(BUILD)\"" -DARCH="\"$(ARCH)\"" -mno-div
        #CFLAGS += -DSDRAM
 export CFLAGS += -mcmodel=medany # -mexplicit-relocs # relocatable code
-export ASFLAGS = -march=$(ARCH) -mabi=$(ABI) -m$(ENDIAN)-endian
+export ASFLAGS = -march=$(ARCH) -mabi=$(ABI)
 export LDFLAGS = -T$(PROJ).ld -Map=$(PROJ).map -m $(ELFTYPE) -static -gc-sections --entry=_start # -Ttext=0
 
 export LDLIBS  = $(LIBS)

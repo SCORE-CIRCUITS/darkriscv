@@ -209,7 +209,8 @@ portable_fini(core_portable *p)
     ee_printf("CoreMark finish in %d us.\n\n",io->timeus);
     p->portable_id = 0;
     
-    // makes no sense return here!
+    // In simulation without interactive console, '>' triggers darkuart ESIMREQ to $finish()
+    ee_printf(">\n");
 
     while(1)
     {

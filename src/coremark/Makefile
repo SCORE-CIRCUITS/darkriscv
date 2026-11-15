@@ -30,7 +30,11 @@ include ../config.mk
 
 DFLAGS_STR = -DFLAGS_STR=\""-O2 -DPERFORMANCE_RUN=1"\"
 
-CFLAGS += -I. -I./src $(DFLAGS_STR) -DITERATIONS=4000 -DPERFORMANCE_RUN=1
+ifndef ITERATIONS
+    ITERATIONS = 1
+endif
+
+CFLAGS += -I. -I./src $(DFLAGS_STR) -DITERATIONS=$(ITERATIONS) -DPERFORMANCE_RUN=1
 
 PROJ = coremark
 OBJS = ./src/core_main.o ./src/core_matrix.o ./src/core_list_join.o ./src/core_state.o ./src/core_util.o core_portme.o ee_printf.o 

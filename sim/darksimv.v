@@ -46,6 +46,7 @@ module darksimv;
     initial
     begin
 `ifdef __ICARUS__
+`ifndef SCORE_NO_VCD
         $dumpfile("darksocv.vcd");
         $dumpvars();
 
@@ -55,6 +56,7 @@ module darksimv;
             $dumpvars(0,soc0.bridge0.core0.REGS[i]);
         end
     `endif
+`endif
 `endif
         $display("reset (startup)");
         #1e3    RES = 0;            // wait 1us in reset state
