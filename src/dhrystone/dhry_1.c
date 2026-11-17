@@ -62,7 +62,7 @@ extern long     time();
 #endif
 #ifdef MSC_CLOCK
 extern clock_t	clock();
-#define Too_Small_Time (2*HZ)
+#define Too_Small_Time 0
 #endif
 
 long            Begin_Time,

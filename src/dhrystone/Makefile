@@ -30,7 +30,7 @@ include ../config.mk
 
 CFLAGS += -Wno-implicit -Wno-incompatible-library-redeclaration -Wno-return-type \
           -fno-builtin-printf -fno-common -falign-functions=4 -Wno-builtin-declaration-mismatch \
-          -DTIME -DNOEMUM -DDHRY_ITERS=2000000
+          -DMSC_CLOCK -DNOEMUM -DDHRY_ITERS=100
 
 PROJ = dhrystone
 OBJS = dhry_1.o dhry_2.o

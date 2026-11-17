@@ -357,6 +357,9 @@
 #undef HZ
 #undef TIMES
 #include <time.h>
+#ifndef CLK_TCK
+#define CLK_TCK CLOCKS_PER_SEC
+#endif
 #define HZ	CLK_TCK
 #endif
 		/* Use Microsoft C hi-res clock */
